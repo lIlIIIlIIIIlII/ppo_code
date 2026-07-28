@@ -1,4 +1,4 @@
-# RL-LDPC Code Design
+# ZeroCode
 
 Reference implementation for constructing LDPC parity-check matrices with MaskablePPO and evaluating them with a flooding Sum-Product Algorithm (SPA) decoder.
 
