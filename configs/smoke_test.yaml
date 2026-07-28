@@ -1,0 +1,41 @@
+library_mode: false
+
+runtime:
+  device: cpu
+  output_root: runs_smoke
+  total_timesteps: 16
+  seed: 4
+
+ppo:
+  learning_rate: 1.0e-4
+  n_steps: 8
+  batch_size: 4
+  n_epochs: 1
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_range: 0.2
+  ent_coef: 0.0
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+  target_kl: null
+
+decoder:
+  iterations: 2
+  train_num_llrs: 8
+  test_num_llrs: 8
+  train_snr_db: 0.0
+  test_snr_db: 0.0
+  step_max_frame_errors: 1
+  test_max_frame_errors: 2
+
+code:
+  rows: 2
+  cols: 4
+  structure_mode: systematic
+  lifting_factor: 1
+  use_4cycle_mask: false
+  max_col_degree: null
+
+objective:
+  reward_metric: ber
+  log_metric: ber

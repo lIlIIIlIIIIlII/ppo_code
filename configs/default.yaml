@@ -1,0 +1,41 @@
+library_mode: True  # true: systematic, fill all editable entries, reward=-log(BER)*0.1
+
+runtime:
+  device: auto
+  output_root: runs
+  total_timesteps: 10000000
+  seed: 4
+
+ppo:
+  learning_rate: 1.0e-5
+  n_steps: 2048
+  batch_size: 64
+  n_epochs: 10
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_range: 0.2
+  ent_coef: 0.0
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+  target_kl: 0.02
+
+decoder:
+  iterations: 8
+  train_num_llrs: 10000
+  test_num_llrs: 10000
+  train_snr_db: 5.0
+  test_snr_db: 5.0
+  step_max_frame_errors: 100
+  test_max_frame_errors: 1000
+
+code:
+  rows: 16
+  cols: 32
+  structure_mode: none   # none | systematic | qc
+  lifting_factor: 4      # used only for qc
+  use_4cycle_mask: False
+  max_col_degree: null
+
+objective:
+  reward_metric: ber     # ber | fer
+  log_metric: ber        # ber | fer

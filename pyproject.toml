@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rl-ldpc-code-design"
+version = "0.1.0"
+description = "MaskablePPO-based construction of parity-check matrices with flooding SPA evaluation"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26,<3",
+  "torch>=2.8,<3",
+  "gymnasium>=1.3,<1.4",
+  "stable-baselines3>=2.9,<3",
+  "sb3-contrib>=2.9,<3",
+  "PyYAML>=6,<7",
+]
+
+[project.scripts]
+rl-ldpc-train = "rl_ldpc_design.train:main"
+rl-ldpc-evaluate = "rl_ldpc_design.evaluate:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
