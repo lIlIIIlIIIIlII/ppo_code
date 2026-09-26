@@ -102,7 +102,7 @@ Experiments are configured with YAML files.
 | `runtime.device`          | `auto`, `cpu`, or `cuda`           | `auto`          |
 | `runtime.total_timesteps` | PPO training length                | `10000000`      |
 | `ppo.pi_net_arch`         | Policy hidden-layer sizes          | `[4096, 2048]`  |
-| `ppo.vf_net_arch`         | Value hidden-layer sizes           | `[4096, 2048]`  |
+| `ppo.vf_net_arch`         | Value hidden-layer sizes           | `[2048, 1024]`  |
 | `decoder.iterations`      | Number of SPA iterations           | `8`             |
 | `decoder.train_snr_db`    | SNR used during training           | `5.0`           |
 | `code.rows`, `code.cols`  | Matrix dimensions (m\times n)      | `16`, `32`      |
