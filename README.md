@@ -72,7 +72,7 @@ rl-ldpc-train --config configs/default.yaml \
   --total-timesteps 100000 \
   --seed 42 \
   --pi-net-arch 4096 2048 \
-  --vf-net-arch 4096 2048 \
+  --vf-net-arch 2048 1024 \
   --output-root runs_exp
 ```
 
